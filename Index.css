@@ -1,0 +1,252 @@
+/* --- RESET E BASE GERAL --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #faf6f0;
+  color: #2e2e2e;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- HEADER --- */
+header {
+  background-color: #6c584c;
+  padding: 10px 15px;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  color: #fefae0;
+  margin: 0;
+  line-height: 1;
+  padding: 0 60px; /* evita sobreposição com botão e logo */
+}
+
+#menu-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  z-index: 1000;
+  color: #fefae0;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #d5bdaf;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  object-fit: cover;
+  background-color: #fffaf1;
+}
+
+/* --- BANNER DENTRO DA SEÇÃO AUTOR --- */
+.faixa-banner {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #d6ccc2;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* --- CONTEÚDO E ESTRUTURA --- */
+p {
+  line-height: 25px;
+  text-align: justify;
+}
+
+.autor-conteudo p {
+  margin-bottom: 1em;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+}
+
+aside {
+  width: 220px;
+  background-color: #d5bdaf;
+  border-right: 1px solid #b08968;
+  padding: 10px;
+  display: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+aside.show {
+  display: block;
+}
+
+#menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#menu li a {
+  display: block;
+  padding: 10px;
+  color: #3e2723;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+#menu li a:hover {
+  background-color: #e6ccb2;
+  color: #3e2723;
+  text-decoration: underline;
+}
+
+#menu li a:focus {
+  background-color: #d5bdaf;
+  color: #3e2723;
+  outline: 2px solid #b08968;
+  outline-offset: 2px;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* --- SEÇÃO AUTOR --- */
+.autor {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  background-color: #fffaf1;
+  border: 1px solid #d6ccc2;
+  border-radius: 10px;
+  padding: 40px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.autor.ativo {
+  display: flex;
+}
+
+/* FOTO AUTOR (se usada) */
+.foto-autor {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #b08968;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.autor-conteudo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.autor-conteudo h2 {
+  margin-top: 0;
+}
+
+/* --- RODAPÉ --- */
+footer {
+  background-color: #6c584c;
+  color: #fefae0;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  border-top: 2px solid #ddd;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  aside {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  .autor {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .autor-conteudo {
+    text-align: justify;
+  }
+
+  .foto-autor {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 10px 50px; /* aumenta espaço lateral no header */
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  #menu-toggle {
+    font-size: 20px;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+  }
+
+  .autor {
+    padding: 15px;
+  }
+}
